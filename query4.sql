@@ -1,0 +1,1 @@
+select name from subjects JOIN books_subjects ON subjects.id=books_subjects.subject WHERE id IN (select subject from books_subjects JOIN books ON books_subjects.book = books.id WHERE book IN (select id from books WHERE title = 'Atomic Habits')) GROUP BY subjects.name;
